@@ -34,7 +34,7 @@ namespace TextBasedRPGMap
             DrawMap();
             Console.WriteLine();
             Console.WriteLine();
-            DrawMap(5);
+            DrawMap(2);
             Console.WriteLine();
             Console.ReadKey(true);
         }
@@ -54,12 +54,13 @@ namespace TextBasedRPGMap
         static void DrawMap(int scale)
         {
             //top border heah
-            /*for(int i = 0; i < column; i++)
+            int borderSize = column * scale;
+            for(int a = 0; a < borderSize + 2; a++)
             {
-                Console.Write("-");
-                Console.WriteLine();
-                Console.WriteLine();
-            }*/
+                Console.Write("*");
+            }
+            //Console.WriteLine();
+            Console.WriteLine();
             for (int h = 0; h < row; h++)
             {
                 //Console.Write("-");
@@ -76,6 +77,10 @@ namespace TextBasedRPGMap
                     Console.Write("|");
                     Console.WriteLine();
                 }
+            }
+            for (int a = 0; a < borderSize + 2; a++)
+            {
+                Console.Write("*");
             }
             //bottom border heah
         }
