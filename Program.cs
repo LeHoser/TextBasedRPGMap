@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,39 +24,60 @@ namespace TextBasedRPGMap
         {'`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`','`'},
         };
 
+        static int row;
+        static int column;
+
         static void Main(string[] args)
         {
+            column = map.GetLength(1);
+            row = map.GetLength(0);
             DrawMap();
             Console.WriteLine();
             Console.WriteLine();
             DrawMap(5);
             Console.WriteLine();
-            map.GetLength(1);
-            Console.Write(map.Length);
             Console.ReadKey(true);
         }
 
         static void DrawMap()
         {
             
-            for(int i = 0; i < 12; i++)
+            for(int i = 0; i < row; i++)
             {
-                for (int j = 0; j < 30; j++)
+                for (int j = 0; j < column; j++)
                 {
                     Console.Write(map[i,j]);
                 }
+                Console.WriteLine();
             }
         }
         static void DrawMap(int scale)
         {
-            for(int i = 0; i < scale; i++)
+            //top border heah
+            /*for(int i = 0; i < column; i++)
             {
-                for (int j = 0; j < scale; j++)
-                {
-                    Console.Write(map[i, j]);
-                }
+                Console.Write("-");
                 Console.WriteLine();
+                Console.WriteLine();
+            }*/
+            for (int h = 0; h < row; h++)
+            {
+                //Console.Write("-");
+                for (int i = 0; i < scale; i++)
+                {
+                    Console.Write("|");
+                    for (int j = 0; j < column; j++)
+                    {
+                        for (int k = 0; k < scale; k++)
+                        {
+                            Console.Write(map[h, j]);
+                        }
+                    }
+                    Console.Write("|");
+                    Console.WriteLine();
+                }
             }
+            //bottom border heah
         }
     }
 }
