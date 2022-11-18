@@ -53,11 +53,15 @@ namespace TextBasedRPGMap
         }
         static void DrawMap(int scale)
         {
-            //top border heah
             int borderSize = column * scale;
-            for(int a = 0; a < borderSize + 2; a++)
+            for(int a = 0; a < 1; a++)
             {
-                Console.Write("*");
+                Console.Write("+");
+                for(int b = 0; b < borderSize; b++)
+                {
+                    Console.Write("-");
+                }
+                Console.Write("+");
             }
             //Console.WriteLine();
             Console.WriteLine();
@@ -78,11 +82,15 @@ namespace TextBasedRPGMap
                     Console.WriteLine();
                 }
             }
-            for (int a = 0; a < borderSize + 2; a++)
+            for (int a = 0; a < 1; a++)
             {
-                Console.Write("*");
+                Console.Write("+");
+                for(int b = 0; b < borderSize; b++)
+                {
+                    Console.Write("-");
+                }
+                Console.Write("+");
             }
-            //bottom border heah
         }
     }
 }
