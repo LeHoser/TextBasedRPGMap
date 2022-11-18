@@ -36,6 +36,11 @@ namespace TextBasedRPGMap
             Console.WriteLine();
             DrawMap(2);
             Console.WriteLine();
+            Console.WriteLine();
+            DrawMap(1);
+            Console.WriteLine();
+            Console.WriteLine();
+            DrawMap(3);
             Console.ReadKey(true);
         }
 
